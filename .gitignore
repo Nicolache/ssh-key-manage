@@ -1,0 +1,13 @@
+*
+!ansible.cfg
+!hosts
+!.gitignore
+!roles
+!roles/ssh_key_manage
+!roles/ssh_key_manage/tasks
+!roles/ssh_key_manage/tasks/main.yml
+!roles/ssh_key_manage/templates
+!roles/ssh_key_manage/templates/deinstall.authorized_keys
+!roles/ssh_key_manage/templates/install.human.authorized_keys
+!roles/ssh_key_manage/templates/install.scripts.authorized_keys
+!ssh_key_manage_play.yml

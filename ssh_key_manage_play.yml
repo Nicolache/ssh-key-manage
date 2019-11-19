@@ -1,0 +1,12 @@
+---
+- hosts: ssh_keys_humans
+  remote_user:
+    root
+  roles:
+   - ssh_key_manage
+
+- hosts: ssh_keys_scripts
+  remote_user:
+    root
+  roles:
+   - ssh_key_manage

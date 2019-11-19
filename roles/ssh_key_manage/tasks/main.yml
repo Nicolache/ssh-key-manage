@@ -1,0 +1,20 @@
+---
+- name: Install/ensure keys for humans are present.
+  authorized_key:
+    user: root
+    state: present
+    key: "{{ lookup('file', 'templates/install.human.authorized_keys') }}"
+  when: inventory_hostname in groups['ssh_keys_humans']
+
+- name: Install/ensure keys for scripts are present.
+  authorized_key:
+    user: root
+    state: present
+    key: "{{ lookup('file', 'templates/install.scripts.authorized_keys') }}"
+  when: inventory_hostname in groups['ssh_keys_scripts']
+
+- name: Deinstall/ensure keys are absent.
+  authorized_key:
+    user: root
+    state: absent
+    key: "{{ lookup('file', 'templates/deinstall.authorized_keys') }}"
